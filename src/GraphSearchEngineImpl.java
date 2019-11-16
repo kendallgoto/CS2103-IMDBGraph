@@ -9,8 +9,8 @@ public class GraphSearchEngineImpl implements GraphSearchEngine {
      * @return A list of the nodes between S and T, starting with S.
      */
     public List<Node> findShortestPath(Node s, Node t) {
-        HashMap<Node, Integer> seenNodes = new HashMap<>();
-        Queue<Node> toVisit = new LinkedList<>();
+        final HashMap<Node, Integer> seenNodes = new HashMap<>();
+        final Queue<Node> toVisit = new LinkedList<>();
         //starting at Node s, breadth first to find node T:
         toVisit.add(s);
         seenNodes.put(s, 0);
@@ -28,7 +28,7 @@ public class GraphSearchEngineImpl implements GraphSearchEngine {
                 }
             }
         }
-        LinkedList<Node> finalList = new LinkedList<>();
+        final LinkedList<Node> finalList = new LinkedList<>();
         if(!seenNodes.containsKey(t))
             return null;
         Node currentNode = t;

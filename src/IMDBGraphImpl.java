@@ -14,7 +14,7 @@ public class IMDBGraphImpl implements IMDBGraph {
      * Instantiates a new IMDBGraph given two IMDB Text database file
      * @param file1 actors file .txt
      * @param file2 actresses file .txt
-     * @throws IOException
+     * @throws IOException error if file not found
      */
     public IMDBGraphImpl(String file1, String file2) throws IOException {
         processFile(new File(file1));
@@ -24,7 +24,7 @@ public class IMDBGraphImpl implements IMDBGraph {
     /**
      * Given a file object, process the file for actor names and their associated movies.
      * @param target a File object containing an IMDB text database file
-     * @throws IOException
+     * @throws IOException error if file not found
      */
     private void processFile(File target) throws IOException {
         final Scanner scanner = new Scanner(target, "ISO-8859-1");
